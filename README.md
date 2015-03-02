@@ -10,22 +10,21 @@ An internet connection and an Linux distribution that uses the Advanced Package 
 ##Capabilities
 The shell script, wzod_mastiff_installer.sh, does the following:
 
-    Downloads, verifies, extracts, and installs source archives for everything you will need to complete a full installation of MASTIFF:
-        MASTIFF v0.6.0
-        diSitool
-        distormv3
-        exiftool
-        pdfid
-        pdf-parser
-        pefile
-        pydeep
-        pyOLEScanner
-        simplejson
-        ssdeep
-        trid (including triddefs)
-        trid
-        Yara (+ magic module) + Yara-Python
-    Adds "mas.py" to your system PATH so that you can run MASTIFF from any location.
+* Downloads, verifies, extracts, and installs source archives for everything you will need to complete a full installation of MASTIFF:
+  * MASTIFF v0.6.0
+  * diSitool
+  * distorm3
+  * exiftool
+  * pdfid
+  * pdf-parser
+  * pefile
+  * pydeep
+  * pyOLEScanner
+  * simplejson
+  * ssdeep
+  * trid (including triddefs)
+  * Yara (+ magic module) + Yara-Python
+* Adds "mas.py" to your system PATH so that you can run MASTIFF from any location.
 
 ##Usage
 MASTIFF will be installed to the directory you specify.
@@ -41,9 +40,9 @@ In the above example, the following directories will be created:
         Contains the MASTIFF v0.6.0 install.
 
 ##Installation
-You can download the script from this Github page.
+You can download the script from this Github page (above).
 
-SHA256 Hash:
+SHA256 Hash: 55c68182ebc6e4f9f925e3159327932a1c1a32cbd8526bd4681db995b2e6ec3a
 
 ##Credits
 Thanks to Tyler Hudak/KoreLogic, Inc. for providing and sharing MASTIFF to aid with automating many aspects relating to static analysis.  For more information regarding the MASTIFF project, go to https://git.korelogic.com/mastiff.git/ and the GitHub repo here https://github.com/KoreLogicSecurity/mastiff.
