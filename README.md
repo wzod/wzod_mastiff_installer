@@ -40,7 +40,7 @@ In the above example, the following directories will be created:
         Contains the MASTIFF v0.6.0 install.
 
 ##Installation
-You can download the script from this Github page (directlink to raw copy https://raw.githubusercontent.com/wzod/wzod_mastiff_installer/master/wzod_mastiff_installer.sh).
+You can download the script from this Github page (direct link to raw copy here: https://raw.githubusercontent.com/wzod/wzod_mastiff_installer/master/wzod_mastiff_installer.sh).
 
 SHA256 Hash: bcf71598905bde6bfad97b08a46da0f73a8d41b50b16fc6a6b1486f12d8d27b2
 
