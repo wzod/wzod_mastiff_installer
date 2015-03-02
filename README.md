@@ -12,7 +12,7 @@ The shell script, wzod_mastiff_installer.sh, does the following:
 
 * Downloads, verifies, extracts, and installs source archives for everything you will need to complete a full installation of MASTIFF:
   * MASTIFF v0.6.0
-  * diSitool
+  * disitool
   * distorm3
   * exiftool
   * pdfid
