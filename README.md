@@ -29,7 +29,7 @@ The shell script, wzod_mastiff_installer.sh, does the following:
 ##Usage
 MASTIFF will be installed to the directory you specify.
 
-    From a terminal, run:
+    From a terminal, run the bash script and specify the directory to install MASTIFF (example below):
         sudo bash wzod_mastiff_installer.sh /home/zod
 
 In the above example, the following directories will be created:
