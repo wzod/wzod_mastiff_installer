@@ -7,7 +7,8 @@
 # Tested on stock Ubuntu 12.04 + 14.04
 # 
 
-# Copyright (C) 2014 4n6k (4n6k.dan@gmail.com)
+# Original script copyright (C) 2014 4n6k (4n6k.dan@gmail.com)
+# Modified by Zod for MASTIFF (2015)
 # 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
