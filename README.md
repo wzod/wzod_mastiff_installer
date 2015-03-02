@@ -47,4 +47,4 @@ SHA256 Hash: 55c68182ebc6e4f9f925e3159327932a1c1a32cbd8526bd4681db995b2e6ec3a
 ##Credits
 Thanks to Tyler Hudak/KoreLogic, Inc. for providing and sharing MASTIFF to aid with automating many aspects relating to static analysis.  For more information regarding the MASTIFF project, go to https://git.korelogic.com/mastiff.git/ and the GitHub repo here https://github.com/KoreLogicSecurity/mastiff.
 
-Also big thanks to 4n6k for sharing 4n6k_volatility_installer.sh (see https://github.com/4n6k/4n6k_volatility_installer), which greatly simplifies the process of installaing Volatility along with the necessary dependencies.  As stated, 4n6k's script was the catalyst for putting together this script for MASTIFF.
+Also big thanks to 4n6k for sharing 4n6k_volatility_installer.sh (see https://github.com/4n6k/4n6k_volatility_installer), which greatly simplifies the process of installing Volatility along with the necessary dependencies.  As stated, 4n6k's script was the catalyst for putting together this script for MASTIFF.
