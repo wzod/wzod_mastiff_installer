@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # mastiff_installer.sh
-# v1.0 (2/08/2015)
+# v1.0 (3/01/2015)
 # Installs MASTIFF for Ubuntu Linux with one command.
 # Run this script from the directory in which you'd like to install MASTIFF.
 # Tested on stock Ubuntu 12.04 + 14.04
