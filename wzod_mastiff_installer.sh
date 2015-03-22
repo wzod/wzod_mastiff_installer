@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # mastiff_installer.sh
 # v1.0 (3/01/2015)
