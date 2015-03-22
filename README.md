@@ -42,7 +42,7 @@ In the above example, the following directories will be created:
 ##Installation
 You can download the script from this Github page (direct link to raw copy here: https://raw.githubusercontent.com/wzod/wzod_mastiff_installer/master/wzod_mastiff_installer.sh).
 
-SHA256 Hash: 4a9de3015a539a1f9fcc7d8c3ea64694c4b313b5b8a18c88b09cada18a2e03d6
+SHA256 Hash: 5bf10de824d0fd94cb27c6076683aa6313d6f7e66fac21cd202cad54e07bbe24
 
 ##Credits
 Thanks to Tyler Hudak/KoreLogic, Inc. for providing and sharing MASTIFF to aid with automating many aspects relating to static analysis.  For more information regarding the MASTIFF project, go to https://git.korelogic.com/mastiff.git/ and the GitHub repo here https://github.com/KoreLogicSecurity/mastiff.
