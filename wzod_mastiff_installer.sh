@@ -172,13 +172,14 @@ install() {
     chmod +x pdf-parser.py; ln -f -s "$PWD"/pdf-parser.py /usr/local/bin/
     chmod +x pyOLEScanner/pyOLEScanner.py; ln -f -s "$PWD"/pyOLEScanner/pyOLEScanner.py /usr/local/bin/
     chmod +x trid; ln -f -s "$PWD"/trid /usr/local/bin/
+    ln -f -s "$PWD"/triddefs.trd /usr/local/etc/
     mkdir /usr/local/etc/yara
     mv -f mastiff-0.6.0 .. ; cd ../mastiff-0.6.0 && chmod +x mas.py
     ln -f -s "${PWD}"/mas.py /usr/local/bin/mas.py
     cp "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf ~/.mastiff.conf
     sed -i "/^plugin_dir/ s|\.\/plugins|"$INSTALL_DIR"\/\/mastiff-0.6.0\/plugins|" ~/.mastiff.conf
-    sed -i "/^trid\ \=\ / s|\.\/trid|"$SETUP_DIR"|" ~/.mastiff.conf
-    sed -i "/^trid_db\ \=\ / s|\.\/trid|"$SETUP_DIR"|" ~/.mastiff.conf
+    sed -i "/^trid\ \=\ / s|\.\/trid|\/usr\/local\/bin|" ~/.mastiff.conf
+    sed -i "/^trid_db\ \=\ / s|\.\/trid|\/usr\/local\/etc|" ~/.mastiff.conf
     sed -i "/^yara_sigs\ \=\ / s|\/usr\/local\/|&"etc"\/|" ~/.mastiff.conf
     sed -i "/^disitool\ \=\ / s|\/usr\/local\/bin|"$SETUP_DIR"|" ~/.mastiff.conf    
     sed -i "/^olecmd\=/ s|\/usr\/local\/src|"$SETUP_DIR"|" ~/.mastiff.conf
