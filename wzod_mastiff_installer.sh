@@ -175,7 +175,7 @@ install() {
     cp -v "$PWD"/triddefs.trd /usr/local/etc/
     mkdir /usr/local/etc/yara
     mv -f mastiff-0.6.0 .. ; cd ../mastiff-0.6.0 && chmod +x mas.py
-    cp -v "${PWD}"/mas.py /usr/local/bin/mas.py
+    cp -v "${PWD}"/mas.py /usr/local/bin/mas.py; chmod +x /usr/local/bin/mas.py
     cp "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf ~/.mastiff.conf
     sed -i "/^plugin_dir/ s|\.\/plugins|"$INSTALL_DIR"\/\/mastiff-0.6.0\/plugins|" ~/.mastiff.conf
     sed -i "/^trid\ \=\ / s|\.\/trid|\/usr\/local\/bin|" ~/.mastiff.conf
