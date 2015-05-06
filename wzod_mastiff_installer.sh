@@ -167,15 +167,15 @@ install() {
   # SIFT 3.0 check + fix
     sift_fix
   # Mastiff
-    chmod +x disitool.py; ln -f -s "$PWD"/disitool.py /usr/local/bin/
-    chmod +x pdfid.py; ln -f -s "$PWD"/pdfid.py /usr/local/bin/
-    chmod +x pdf-parser.py; ln -f -s "$PWD"/pdf-parser.py /usr/local/bin/
-    chmod +x pyOLEScanner/pyOLEScanner.py; ln -f -s "$PWD"/pyOLEScanner/pyOLEScanner.py /usr/local/bin/
-    chmod +x trid; ln -f -s "$PWD"/trid /usr/local/bin/
-    ln -f -s "$PWD"/triddefs.trd /usr/local/etc/
+    chmod +x disitool.py; cp -v "$PWD"/disitool.py /usr/local/bin/
+    chmod +x pdfid.py; cp -v "$PWD"/pdfid.py /usr/local/bin/
+    chmod +x pdf-parser.py; cp -v "$PWD"/pdf-parser.py /usr/local/bin/
+    chmod +x pyOLEScanner/pyOLEScanner.py; cp -v "$PWD"/pyOLEScanner/pyOLEScanner.py /usr/local/bin/
+    chmod +x trid; cp -v "$PWD"/trid /usr/local/bin/
+    cp -v "$PWD"/triddefs.trd /usr/local/etc/
     mkdir /usr/local/etc/yara
     mv -f mastiff-0.6.0 .. ; cd ../mastiff-0.6.0 && chmod +x mas.py
-    ln -f -s "${PWD}"/mas.py /usr/local/bin/mas.py
+    cp -v "${PWD}"/mas.py /usr/local/bin/mas.py
     cp "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf ~/.mastiff.conf
     sed -i "/^plugin_dir/ s|\.\/plugins|"$INSTALL_DIR"\/\/mastiff-0.6.0\/plugins|" ~/.mastiff.conf
     sed -i "/^trid\ \=\ / s|\.\/trid|\/usr\/local\/bin|" ~/.mastiff.conf
