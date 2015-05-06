@@ -32,7 +32,7 @@ LOGFILE="${SETUP_DIR}"/"install_mastiff.log"
 ARCHIVES=('disitool_v0_3.zip' 'distorm3.zip' 'pdfid_v0_2_1.zip' \
           'pdf-parser_V0_6_0.zip' 'pefile-1.2.10-139.tar.gz' \
           '0.2.tar.gz' 'pyOLEScanner.zip' 'v3.6.5.tar.gz' \
-          'ssdeep-2.11.1.tar.gz' 'trid_linux.zip' \
+          'ssdeep-2.11.1.tar.gz' 'trid_linux_64.zip' \
 	  'v3.3.0.tar.gz' 'mastiff-0.6.0.tar.gz' )
 HASHES=('aef923f49e53c7c2194058f34a73b293d21448deb7e2112819fc1b3b450347b8' \
         'd311d232e108def8acac0d4f6514e7bc070e37d7aa123ab9a9a05b9322321582' \
@@ -43,7 +43,7 @@ HASHES=('aef923f49e53c7c2194058f34a73b293d21448deb7e2112819fc1b3b450347b8' \
         '82a1e5bc6ee03055862c4b0fc745c5b6300dc8bdaa6dc3d62bea4a4a7d886905' \
         '9df4baeba729e58a281db852afb8d8b26616017619811b3d40aab52afa3ea78d' \
         'a632ac30fca29ad5627e1bf5fae05d9a8873e6606314922479259531e0c19608' \
-        '129af9c56715f2e57582bc1924dd79d36dfd20a88d04594fbd7b37e135068d19' \
+        '09a253e54b138fa0d996a6797333ca26e67d618a25a0974287b39425caa1ed6a' \
         'e5f4359082e35ff00ee94af9ee897bb0ab18abf49a2c4fe45968d7a848e5bd83' \
         'fb935be8210a7b4a309aae2b9c545f9dc46191d4b80f745584885db0c0db4cef' )
 
@@ -106,7 +106,7 @@ download() {
       "https://github.com/simplejson/simplejson/archive/v3.6.5.tar.gz" && \
       wget -O ssdeep-2.11.1.tar.gz "http://sourceforge.net/projects/ssdeep/files/ssdeep-2.11.1/ssdeep-2.11.1.tar.gz/download" && \
       wget "http://mark0.net/download/triddefs.zip" \
-      "http://mark0.net/download/trid_linux.zip" \
+      "http://mark0.net/download/trid_linux_64.zip" \
       "https://github.com/plusvic/yara/archive/v3.3.0.tar.gz" \
       "https://www.korelogic.com/Resources/Tools/mastiff-0.6.0.tar.gz"
     kill_tail
@@ -214,9 +214,8 @@ kill_tail() {
 aptget_install() {
   apt-get update && \
   apt-get install \
-    automake build-essential exiftool git libc6-i386 libncurses5:i386 \
-    libtool make python-dev python-magic python-setuptools python-yapsy \
-    libmagic-dev  -y --force-yes
+    automake build-essential exiftool git libtool make python-dev python-magic \
+    python-setuptools python-yapsy libmagic-dev  -y --force-yes
 }
 
 # Shorthand for done message
