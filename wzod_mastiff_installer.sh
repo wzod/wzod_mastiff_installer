@@ -170,18 +170,25 @@ install() {
     chmod +x disitool.py; cp -v "$PWD"/disitool.py /usr/local/bin/
     chmod +x pdfid.py; cp -v "$PWD"/pdfid.py /usr/local/bin/
     chmod +x pdf-parser.py; cp -v "$PWD"/pdf-parser.py /usr/local/bin/
-    chmod +x pyOLEScanner/pyOLEScanner.py; cp -v "$PWD"/pyOLEScanner/pyOLEScanner.py /usr/local/bin/
+    chmod +x pyOLEScanner/pyOLEScanner.py; cp -vr "$PWD"/pyOLEScanner /usr/local/src/
     chmod +x trid; cp -v "$PWD"/trid /usr/local/bin/
     cp -v "$PWD"/triddefs.trd /usr/local/etc/
-    mkdir /usr/local/etc/yara
+    mkdir -p /usr/local/etc/yara
+    wget https://malwarecookbook.googlecode.com/svn-history/r3/trunk/3/5/capabilities.yara
+    wget -O readme https://api.github.com/repos/Yara-Rules/rules/contents && grep "download_url" readme | awk '{print $2}' | grep \.yar | sed s/,//g | xargs -I% wget % 
+    rename 's/\.yar/\.yara/' "$SETUP_DIR"/*.yar
+    mv "$SETUP_DIR"/*.yara /usr/local/etc/yara/
     mv -f mastiff-0.6.0 .. ; cd ../mastiff-0.6.0 && chmod +x mas.py
+    sudo sed -i '1s|^|#!/usr/bin/python\n|' /usr/local/src/pyOLEScanner/pyOLEScanner.py
+    sudo chmod 755 /usr/local/src/pyOLEScanner/pyOLEScanner.py 
+    ln -f -s /usr/local/src/pyOLEScanner/pyOLEScanner.py /usr/local/bin/
     ln -f -s  "${PWD}"/mas.py /usr/local/bin/mas.py
-    sed -i "/^plugin_dir/ s|\.\/plugins|"$INSTALL_DIR"\/\/mastiff-0.6.0\/plugins|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
+    sed -i "/^plugin_dir/ s|\.\/plugins|"$INSTALL_DIR"\/mastiff-0.6.0\/plugins|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
     sed -i "/^trid\ \=\ / s|\.\/trid|\/usr\/local\/bin|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
     sed -i "/^trid_db\ \=\ / s|\.\/trid|\/usr\/local\/etc|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
     sed -i "/^yara_sigs\ \=\ / s|\/usr\/local\/|&"etc"\/|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
-    sed -i "/^disitool\ \=\ / s|\/usr\/local\/bin|"$SETUP_DIR"|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf    
-    sed -i "/^olecmd\=/ s|\/usr\/local\/src|"$SETUP_DIR"|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
+    sed -i "/^disitool\ \=\ / s|"$SETUP_DIR"|\/usr\/local\/bin|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf    
+    sed -i "/^olecmd\=/ s|\/usr\/local\/src\/pyOLEScanner\/|\/usr\/local\/bin\/|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
     cp "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf ~/.mastiff.conf
     kill_tail
 } &>>"${LOGFILE}"
