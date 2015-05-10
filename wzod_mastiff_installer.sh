@@ -160,8 +160,8 @@ install() {
     cd pydeep-0.2 && py_install
   # simplejson
     cd simplejson-3.6.5 && py_install
-  # ssdeep
-  #  cd ssdeep-2.11.1 && make_install 
+  # OfficeDissector
+    cd officedissector-master && py_install
   # yara + yara-python
     cd yara-3.3.0 && chmod +x bootstrap.sh && ./bootstrap.sh && \
       ./configure --enable-magic ; make ; make install; 
