@@ -33,7 +33,7 @@ ARCHIVES=('disitool_v0_3.zip' 'distorm3.zip' 'pdfid_v0_2_1.zip' \
           'pdf-parser_V0_6_0.zip' 'pefile-1.2.10-139.tar.gz' \
           '0.2.tar.gz' 'pyOLEScanner.zip' 'v3.6.5.tar.gz' \
           'ssdeep-2.11.1.tar.gz' 'trid_linux_64.zip' \
-	  'v3.3.0.tar.gz' 'mastiff-0.6.0.tar.gz' )
+	  'v3.3.0.tar.gz' 'officedissector.zip' 'mastiff-0.6.0.tar.gz' )
 HASHES=('aef923f49e53c7c2194058f34a73b293d21448deb7e2112819fc1b3b450347b8' \
         'd311d232e108def8acac0d4f6514e7bc070e37d7aa123ab9a9a05b9322321582' \
         'f1b4728dd2ce455b863b930e12c6dec952cb95c0bb3d6924136a6e49aca877c2' \
@@ -45,6 +45,7 @@ HASHES=('aef923f49e53c7c2194058f34a73b293d21448deb7e2112819fc1b3b450347b8' \
         'a632ac30fca29ad5627e1bf5fae05d9a8873e6606314922479259531e0c19608' \
         '09a253e54b138fa0d996a6797333ca26e67d618a25a0974287b39425caa1ed6a' \
         'e5f4359082e35ff00ee94af9ee897bb0ab18abf49a2c4fe45968d7a848e5bd83' \
+        'fd20492fa422bc9456274a11c89963e6d38c0e81db770b2066cfd3f1521b54f9' \
         'fb935be8210a7b4a309aae2b9c545f9dc46191d4b80f745584885db0c0db4cef' )
 
 # Program usage dialog
@@ -104,11 +105,12 @@ download() {
       "https://github.com/kbandla/pydeep/archive/0.2.tar.gz" \
       "https://github.com/Evilcry/PythonScripts/raw/master/pyOLEScanner.zip" \
       "https://github.com/simplejson/simplejson/archive/v3.6.5.tar.gz" && \
-      wget -O ssdeep-2.11.1.tar.gz "http://sourceforge.net/projects/ssdeep/files/ssdeep-2.11.1/ssdeep-2.11.1.tar.gz/download" && \
-      wget "http://mark0.net/download/triddefs.zip" \
+      wget -o "${LOGFILE}" -O ssdeep-2.11.1.tar.gz "http://sourceforge.net/projects/ssdeep/files/ssdeep-2.11.1/ssdeep-2.11.1.tar.gz/download" && \
+      wget -o "${LOGFILE}" "http://mark0.net/download/triddefs.zip" \
       "http://mark0.net/download/trid_linux_64.zip" \
-      "https://github.com/plusvic/yara/archive/v3.3.0.tar.gz" \
-      "https://www.korelogic.com/Resources/Tools/mastiff-0.6.0.tar.gz"
+      "https://github.com/plusvic/yara/archive/v3.3.0.tar.gz" && \
+      wget -o "${LOGFILE}" -O officedissector.zip "https://github.com/grierforensics/officedissector/archive/master.zip" && \
+      wget -o "${LOGFILE}" "https://www.korelogic.com/Resources/Tools/mastiff-0.6.0.tar.gz"
     kill_tail
   fi
 }
@@ -178,11 +180,14 @@ install() {
     wget -O readme https://api.github.com/repos/Yara-Rules/rules/contents && grep "download_url" readme | awk '{print $2}' | grep \.yar | sed s/,//g | xargs -I% wget % 
     rename 's/\.yar/\.yara/' "$SETUP_DIR"/*.yar
     mv "$SETUP_DIR"/*.yara /usr/local/etc/yara/
+    sed -i '182s/\+//' /usr/local/etc/yara/malicious_document.yara
     mv -f mastiff-0.6.0 .. ; cd ../mastiff-0.6.0 && chmod +x mas.py
+    mv "$SETUP_DIR"/officedissector-master/mastiff-plugins/* "$INSTALL_DIR"/mastiff-0.6.0/plugins/Office/
     sudo sed -i '1s|^|#!/usr/bin/python\n|' /usr/local/src/pyOLEScanner/pyOLEScanner.py
     sudo chmod 755 /usr/local/src/pyOLEScanner/pyOLEScanner.py 
     ln -f -s /usr/local/src/pyOLEScanner/pyOLEScanner.py /usr/local/bin/
     ln -f -s  "${PWD}"/mas.py /usr/local/bin/mas.py
+    sed -i "/^log_dir/ s|\/work|\/workdir|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf 
     sed -i "/^plugin_dir/ s|\.\/plugins|"$INSTALL_DIR"\/mastiff-0.6.0\/plugins|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
     sed -i "/^trid\ \=\ / s|\.\/trid|\/usr\/local\/bin|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
     sed -i "/^trid_db\ \=\ / s|\.\/trid|\/usr\/local\/etc|" "$INSTALL_DIR"/mastiff-0.6.0/mastiff.conf
@@ -222,7 +227,7 @@ aptget_install() {
   apt-get update && \
   apt-get install \
     automake build-essential exiftool git libtool make python-dev python-magic \
-    python-setuptools python-yapsy libmagic-dev  -y --force-yes
+    python-lxml python-setuptools python-yapsy libmagic-dev  -y --force-yes
 }
 
 # Shorthand for done message
