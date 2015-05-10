@@ -15,6 +15,7 @@ The shell script, wzod_mastiff_installer.sh, does the following:
   * disitool
   * distorm3
   * exiftool
+  * OfficeDissector
   * pdfid
   * pdf-parser
   * pefile
@@ -42,7 +43,7 @@ In the above example, the following directories will be created:
 ##Installation
 You can download the script from this Github page (direct link to raw copy here: https://raw.githubusercontent.com/wzod/wzod_mastiff_installer/master/wzod_mastiff_installer.sh).
 
-SHA256 Hash: e4980a7371a68bdcff0a4205fc348308a091335b2820386e3f7cea8efcc7476c
+SHA256 Hash: 9c3ce136d69104d9905ada3085b4a6ec6d5045c3410e2b08b30039d6ad338f2d
 
 ##Credits
 Thanks to Tyler Hudak/KoreLogic, Inc. for providing and sharing MASTIFF to aid with automating many aspects relating to static analysis.  For more information regarding the MASTIFF project, go to https://git.korelogic.com/mastiff.git/ and the GitHub repo here https://github.com/KoreLogicSecurity/mastiff.
