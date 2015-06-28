@@ -163,7 +163,7 @@ install() {
   # OfficeDissector
     cd officedissector-master && py_install
   # yara + yara-python
-    cd yara-3.3.0 && chmod +x bootstrap.sh && ./bootstrap.sh && \
+    cd yara-3.4.0 && chmod +x bootstrap.sh && ./bootstrap.sh && \
       ./configure --enable-magic ; make ; make install; 
     cd yara-python && py_install && ldconfig && cd "${SETUP_DIR}"
   # SIFT 3.0 check + fix
