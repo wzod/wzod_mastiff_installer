@@ -1,5 +1,5 @@
 # wzod_mastiff_installer
-Shell scripts for installing MASTIFF v0.6.0 and/or MASTIFF v0.7.1 on Ubuntu Linux.
+Shell scripts for installing MASTIFF v0.6.0 or MASTIFF v0.7.1 on Ubuntu Linux.
 
 ##Background
 The MASTIFF Project, which was established by Tyler Hudak of KoreLogic, Inc., provides "a static analysis framework that automates the process of extracting key characteristics from a number of different file formats". (reference: https://git.korelogic.com/mastiff.git/)  Due to the significant number of dependencies, plugins and settings involved with installing a MASTIFF instance as well as inspiration from 4n6k's installation script for installing Volatility, the mastiff_installer was created to simplify the process of installing MASTIFF.
@@ -37,15 +37,13 @@ In the above example, the following directories will be created:
 
     /home/zod/mastiff_setup
         Contains dependency source code and the install_log.txt file.
- For MASTIFF v0.6.0
     /home/zod/mastiff-0.6.0
-        Contains the MASTIFF v0.6.0 install.
- For MASTIFF v0.7.1
+        Contains the MASTIFF v0.6.0 install if using wzod_mastiff_installer.sh script.
     /home/zod/mastiff-0.7.1
-        Contains the MASTIFF v0.7.1 install.
+        Contains the MASTIFF v0.7.1 install if using wzod_mastiff_0.7.1_installer.sh script.
 
 ##Installation
-You can download the scripts from this Github page (direct link to raw copy here:
+You can download the scripts from the following Github pages:
 
 MASTIFF v0.6.0
 https://raw.githubusercontent.com/wzod/wzod_mastiff_installer/master/wzod_mastiff_installer.sh).
