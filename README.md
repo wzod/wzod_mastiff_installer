@@ -53,7 +53,7 @@ SHA256 Hash: 9bbd4c8226e8143fb46a8cd905b57a04019d0f0efde6aa1690089fa51a1a6b0c
 MASTIFF v0.7.1
 https://github.com/wzod/wzod_mastiff_installer/raw/master/wzod_mastiff_0.7.1_installer.sh
 
-SHA256 Hash: 9eb3e4e19b22e09b25128e7a61bbcf761c9aca1f5e8d15b15c2c009ee9e0903b
+SHA256 Hash: ce4a50796d0297ba8ed3c4dd6e2d436473cbbbd8610944911bf3e6ac04733373
 
 ##Credits
 Thanks to Tyler Hudak/KoreLogic, Inc. for providing and sharing MASTIFF to aid with automating many aspects relating to static analysis.  For more information regarding the MASTIFF project, go to https://git.korelogic.com/mastiff.git/ and the GitHub repo here https://github.com/KoreLogicSecurity/mastiff.
