@@ -33,7 +33,7 @@ ARCHIVES=('disitool_v0_3.zip' 'distorm3.zip' 'pdfid_v0_2_1.zip' \
           'pdf-parser_V0_6_3.zip' 'pefile-1.2.10-139.tar.gz' \
           '0.2.tar.gz' 'pyOLEScanner.zip' 'v3.7.3.tar.gz' \
           'ssdeep-2.13.tar.gz' 'trid_linux_64.zip' \
-	  'v3.3.0.tar.gz' 'officedissector.zip' 'mastiff-0.7.1.tar.gz' )
+	  'v3.4.0.tar.gz' 'officedissector.zip' 'mastiff-0.7.1.tar.gz' )
 HASHES=('aef923f49e53c7c2194058f34a73b293d21448deb7e2112819fc1b3b450347b8' \
         '727f5d1d51dd779578dc5aaa30c18d4836532e4ce174078867174ac7ae56e5d0' \
         'f1b4728dd2ce455b863b930e12c6dec952cb95c0bb3d6924136a6e49aca877c2' \
@@ -44,7 +44,7 @@ HASHES=('aef923f49e53c7c2194058f34a73b293d21448deb7e2112819fc1b3b450347b8' \
         'f3984a2df9eb186fa871caf4e131fad64154d5e67c296bb29f32f854afcf0689' \
         '6e4ca94457cb50ff3343d4dd585473817a461a55a666da1c5a74667924f0f8c5' \
         '09a253e54b138fa0d996a6797333ca26e67d618a25a0974287b39425caa1ed6a' \
-        'e5f4359082e35ff00ee94af9ee897bb0ab18abf49a2c4fe45968d7a848e5bd83' \
+        '528571ff721364229f34f6d1ff0eedc3cd5a2a75bb94727dc6578c6efe3d618b' \
         'f47f2f28d8ce687a7bd4e6a74a3c60aaa8bc4e690902fec92c2d42bfbf9bb402' \
         '92f63d3e71091f64e099be6737151ca0cf3475edc227327bfe63a5364384a8d3' )
 
@@ -108,7 +108,7 @@ download() {
       wget -o "${LOGFILE}" -O ssdeep-2.13.tar.gz "http://sourceforge.net/projects/ssdeep/files/ssdeep-2.13/ssdeep-2.13.tar.gz/download" && \
       wget -o "${LOGFILE}" "http://mark0.net/download/triddefs.zip" \
       "http://mark0.net/download/trid_linux_64.zip" \
-      "https://github.com/plusvic/yara/archive/v3.3.0.tar.gz" && \
+      "https://github.com/plusvic/yara/archive/v3.4.0.tar.gz" && \
       wget -o "${LOGFILE}" -O officedissector.zip "https://github.com/grierforensics/officedissector/archive/master.zip" && \
       wget -o "${LOGFILE}" "https://www.korelogic.com/Resources/Tools/mastiff-0.7.1.tar.gz"
     kill_tail
