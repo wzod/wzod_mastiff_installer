@@ -1,5 +1,5 @@
 # wzod_mastiff_installer
-Shell script for installing MASTIFF v0.6.0 on Ubuntu Linux.
+Shell scripts for installing MASTIFF v0.6.0 and/or MASTIFF v0.7.1 on Ubuntu Linux.
 
 ##Background
 The MASTIFF Project, which was established by Tyler Hudak of KoreLogic, Inc., provides "a static analysis framework that automates the process of extracting key characteristics from a number of different file formats". (reference: https://git.korelogic.com/mastiff.git/)  Due to the significant number of dependencies, plugins and settings involved with installing a MASTIFF instance as well as inspiration from 4n6k's installation script for installing Volatility, the mastiff_installer was created to simplify the process of installing MASTIFF.
@@ -11,7 +11,7 @@ An internet connection and an Linux distribution that uses the Advanced Package 
 The shell script, wzod_mastiff_installer.sh, does the following:
 
 * Downloads, verifies, extracts, and installs source archives for everything you will need to complete a full installation of MASTIFF:
-  * MASTIFF v0.6.0
+  * MASTIFF v0.6.0/v0.7.1
   * disitool
   * distorm3
   * exiftool
@@ -37,13 +37,25 @@ In the above example, the following directories will be created:
 
     /home/zod/mastiff_setup
         Contains dependency source code and the install_log.txt file.
+ For MASTIFF v0.6.0
     /home/zod/mastiff-0.6.0
         Contains the MASTIFF v0.6.0 install.
+ For MASTIFF v0.7.1
+    /home/zod/mastiff-0.7.1
+        Contains the MASTIFF v0.7.1 install.
 
 ##Installation
-You can download the script from this Github page (direct link to raw copy here: https://raw.githubusercontent.com/wzod/wzod_mastiff_installer/master/wzod_mastiff_installer.sh).
+You can download the scripts from this Github page (direct link to raw copy here:
+
+MASTIFF v0.6.0
+https://raw.githubusercontent.com/wzod/wzod_mastiff_installer/master/wzod_mastiff_installer.sh).
 
 SHA256 Hash: 9bbd4c8226e8143fb46a8cd905b57a04019d0f0efde6aa1690089fa51a1a6b0c
+
+MASTIFF v0.7.1
+https://github.com/wzod/wzod_mastiff_installer/raw/master/wzod_mastiff_0.7.1_installer.sh
+
+SHA256 Hash: 9eb3e4e19b22e09b25128e7a61bbcf761c9aca1f5e8d15b15c2c009ee9e0903b
 
 ##Credits
 Thanks to Tyler Hudak/KoreLogic, Inc. for providing and sharing MASTIFF to aid with automating many aspects relating to static analysis.  For more information regarding the MASTIFF project, go to https://git.korelogic.com/mastiff.git/ and the GitHub repo here https://github.com/KoreLogicSecurity/mastiff.
